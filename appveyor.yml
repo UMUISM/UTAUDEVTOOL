@@ -7,5 +7,15 @@ build_script:
 - cmd: >-
     mkdir build
     cd build
-    cmake c:\projects\source -G "Visual Studio 15"
+    cmake c:\projects\source -G "Visual Studio 15" -B "c:\\projects\\source\\build"
     cmake --build . --config "Release"
+
+artifacts:
+- path: build\*.exe
+  name: utaudev-{build}
+
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: s4Qh6C0lm0rZIKztCRjl69ER4IzK4voYH4O8XgMNu88/8pSW3Vb9h6kwq35UDq3V

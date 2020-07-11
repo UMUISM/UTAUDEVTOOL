@@ -6,4 +6,3 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(rapidjson/include/)
 
 add_executable(UTAU main.cpp)
-
